@@ -3,17 +3,17 @@
 ## 📝 Post-Incident Review (PIR)
 
 ### 1. Executive Summary
-On 24-06-2026, an outage occurred rendering the Nginx Gateway completely unreachable, disconnecting all users. The incident was detected immediately via Uptime Kuma, investigated, and resolved within 30 minutes by restarting the web server daemon. 
+On 28-06-2026, an outage occurred rendering the Nginx Gateway completely unreachable, disconnecting all users. The incident was detected immediately via Uptime Kuma, investigated, and resolved within 30 minutes by restarting the web server daemon. 
 
-### 2. Timeline (Timezone: .....)
-* **T+0 [Time]:** Uptime Kuma monitoring detected the Nginx service as offline.
-* **T+2 [Time]:** P1 Incident ticket created in GitHub.
-* **T+3 [Time]:** Initial customer acknowledgement dispatched.
-* **T+5 [Time]:** Uptime Kuma logs reviewed for exact failure timestamp.
-* **T+8 [Time]:** Prometheus metrics queried; no CPU or memory spikes detected prior to failure.
-* **T+20 [Time]:** Nginx service manually restarted via systemctl.
-* **T+22 [Time]:** Uptime Kuma confirmed service recovery (Green).
-* **T+30 [Time]:** Resolution notice posted and ticket closed.
+### 2. Timeline (Timezone: IST)
+* **T+0 [08:19]:** Uptime Kuma monitoring detected the Nginx service as offline.
+* **T+2 [08:22]:** P1 Incident ticket created in GitHub.
+* **T+3 [08:24]:** Initial customer acknowledgement dispatched.
+* **T+5 [08:26]:** Uptime Kuma logs reviewed for exact failure timestamp.
+* **T+8 [08:28]:** Prometheus metrics queried; no CPU or memory spikes detected prior to failure.
+* **T+20 [08:31]:** Nginx service manually restarted via systemctl.
+* **T+22 [08:32]:** Uptime Kuma confirmed service recovery (Green).
+* **T+30 [08:35]:** Resolution notice posted and ticket closed.
 
 ### 3. Root Cause Analysis
 The outage was caused by the `nginx` system service being manually stopped (`sudo systemctl stop nginx`), simulating a catastrophic daemon crash. Because there was no automated recovery mechanism configured for the service, the gateway remained offline until manual intervention occurred.
