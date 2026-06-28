@@ -1,4 +1,5 @@
 # P1 Lab Submission: Nginx Gateway Unreachable
+## https://github.com/Siba-Ka-Playground/cogs-support-lab-tickets/issues/4
 
 ## 📝 Post-Incident Review (PIR)
 
